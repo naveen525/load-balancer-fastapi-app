@@ -5,7 +5,7 @@
 
 ## Project Structure
 
-.
+
 ├── docker-compose.yml
 
 ├── nginx
@@ -150,8 +150,11 @@ Run the following command multiple times to see responses from different instanc
 curl localhost:8080
 
 Expected output (alternating container responses):
+
 {"message": "Hello from app_1!"}
+
 {"message": "Hello from app_2!"}
+
 {"message": "Hello from app_3!"}
 
 
