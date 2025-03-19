@@ -7,10 +7,15 @@
 
 .
 ├── docker-compose.yml
+
 ├── nginx
+
 │   └── nginx.conf
+
 ├── app
+
 │   └── main.py
+
 ├── Dockerfile
 
 ## Step 1: FastAPI App Code (app/main.py)
