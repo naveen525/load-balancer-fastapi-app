@@ -45,7 +45,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
 
 This setup includes:
 
-✅ Sticky sessions for consistent user experience
+
 ✅ Rate limiting to prevent abuse
 ✅ Optimized timeout settings for stability
 ✅ Detailed logging for better observability
@@ -63,9 +63,9 @@ http {
     limit_req_zone $binary_remote_addr zone=rate_limit_zone:10m rate=10r/s;
 
     upstream backend {
-        ip_hash;  # Sticky sessions (based on client IP)
         server app:5000 max_fails=3 fail_timeout=10s;
-        keepalive 32;  # Maintain up to 32 persistent connections
+        server app:5000 max_fails=3 fail_timeout=10s;
+        server app:5000 max_fails=3 fail_timeout=10s;
     }
 
     log_format main '$remote_addr - $remote_user [$time_local] '
